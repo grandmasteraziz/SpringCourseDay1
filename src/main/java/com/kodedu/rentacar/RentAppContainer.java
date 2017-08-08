@@ -5,11 +5,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class RentAppContainer {
 
-    ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:rent-config.xml");
 
-    RentralService rentralService = applicationContext.getBean(RentralService.class);
+    public static void main(String[] args) {
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:rent-config.xml");
 
-
+        RentralService rentralService = applicationContext.getBean(RentralService.class);
+        rentralService.rent(4);
+    }
 
 
 }
